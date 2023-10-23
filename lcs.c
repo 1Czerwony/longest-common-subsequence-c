@@ -51,7 +51,10 @@ int main() {
 
     FILE *saida = fopen("saida.txt", "w");
 
+    // testes de lcs para tamanhos máximos de vetores de 20 a 140
+    // i representa o tamanho maximo de x e y
     for(int i = 20; i < 140; i+=20) {
+        // escolher tamanhos de vetores aleatórios de 0 a i
         int tam_x = rand() % i;
         int tam_y = rand() % i;
 
@@ -60,11 +63,18 @@ int main() {
 
         printf("\n");
         fprintf(saida, "\n");
+
+        // gerar vetores de palavras aleatórias
         inicializar_vetores(x, y, tam_x, tam_y, saida);
+
+        // mostra tamanhos m e n
         printf("\nm = %d, n = %d\n", tam_x, tam_y);
         fprintf(saida, "\nm = %d, n = %d\n", tam_x, tam_y);
+
+        // mostra calculo de lcs
         printf("lcs = %d\n", lcs(x, y, tam_x, tam_y));
         fprintf(saida, "lcs = %d\n", lcs(x, y, tam_x, tam_y));
+
         printf("\n---------------------------------------------\n");
         fprintf(saida, "\n---------------------------------------------\n");
     }
